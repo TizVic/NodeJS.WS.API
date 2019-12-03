@@ -1,0 +1,26 @@
+{
+  "name": "webserver-express-prototype-01",
+  "version": "1.0.0",
+  "description": "Web Server in Node - Prototype 1",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TizVic/NodeJS.WS.API.git"
+  },
+  "author": "TizVic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TizVic/NodeJS.WS.API/issues"
+  },
+  "homepage": "https://github.com/TizVic/NodeJS.WS.API#readme",
+  "dependencies": {
+    "jasmine-node": "^3.0.0",
+    "moment": "^2.24.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.1"
+  }
+}
