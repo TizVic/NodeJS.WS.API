@@ -9,6 +9,9 @@ var PORT = process.env.PORT || 11235;
 // Middleware for static files
 app.use('/assets', express.static(__dirname + '/public'));
 
+// View Engine (EJS)
+app.set('view engine', 'ejs');
+
 // Minimal custom middleware [next()]
 app.use('/', function (req, res, next) {
     console.log('Requested url: ' + req.url);
@@ -17,7 +20,11 @@ app.use('/', function (req, res, next) {
 
 app.get('/', function(req, res){
 
-    res.send('<html><head><link href=assets/style.css type=text/css rel=stylesheet /></head><body><h2>Hello world!!</h2></body></html>');
+    // No view Enging
+    // res.send('<html><head><link href=assets/style.css type=text/css rel=stylesheet /></head><body><h2>Hello world!!</h2></body></html>');
+
+    // With View Engine
+    res.render('index');
 
 });
 
