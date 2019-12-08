@@ -36,8 +36,12 @@ app.get('/api', function(req, res){
 
 app.get('/api/number/:id', function(req, res){
 
-    res.send('<html><head></head><body><h2>Number inputted: ' +
-       '<code>' + req.params.id + '</code></h2>');
+    // No View Engine
+    // res.send('<html><head></head><body><h2>Number inputted: ' +
+    //    '<code>' + req.params.id + '</code></h2>');
+
+    // With view engine. ID is a placeholder to match in view
+    res.render('number', { ID: req.params.id});
 
 });
 
