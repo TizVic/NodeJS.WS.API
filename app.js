@@ -6,9 +6,12 @@ var app = express();
 
 var PORT = process.env.PORT || 11235;
 
+// Middleware for ststic files
+app.use('/assets', express.static(__dirname + '/public'));
+
 app.get('/', function(req, res){
 
-    res.send('<html><head></head><body><h2>Hello world!!</h2></body></html>');
+    res.send('<html><head><link href=assets/style.css type=text/css rel=stylesheet /></head><body><h2>Hello world!!</h2></body></html>');
 
 });
 
