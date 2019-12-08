@@ -2,9 +2,15 @@
 
 var express = require('express');
 
+// body parser for POST/PUT/PATCH body
+var bodyParser = require('body-parser');
+
 var app = express();
 
 var PORT = process.env.PORT || 11235;
+
+// body parser for POST/PUT/PATCH body
+var urlencodedParser = bodyParser.urlencoded({extended: false});
 
 // Middleware for static files
 app.use('/assets', express.static(__dirname + '/public'));
@@ -16,6 +22,15 @@ app.set('view engine', 'ejs');
 app.use('/', function (req, res, next) {
     console.log('Requested url: ' + req.url);
     next();
+});
+
+// POST body parsing
+app.post('/person', urlencodedParser, function (req, res) {
+   
+    res.send('Thank you!');
+    console.log(req.body.firstname);
+    console.log(req.body.lastname);
+
 });
 
 app.get('/', function(req, res){
