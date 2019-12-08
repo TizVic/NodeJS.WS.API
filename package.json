@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/TizVic/NodeJS.WS.API#readme",
   "dependencies": {
+    "ejs": "^3.0.1",
     "express": "^4.17.1",
     "jasmine-node": "^3.0.0",
     "moment": "^2.24.0"
