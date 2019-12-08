@@ -41,7 +41,10 @@ app.get('/api/number/:id', function(req, res){
     //    '<code>' + req.params.id + '</code></h2>');
 
     // With view engine. ID is a placeholder to match in view
-    res.render('number', { ID: req.params.id});
+    // res.render('number', { ID: req.params.id});
+
+    // With View Engine and QueryString
+    res.render('number', { ID: req.params.id, QSTR: req.query.qstr });
 
 });
 
