@@ -11,6 +11,7 @@ var PORT = process.env.PORT || 11235;
 
 // body parser for POST/PUT/PATCH body
 var urlencodedParser = bodyParser.urlencoded({extended: false});
+var jsonParser = bodyParser.json();
 
 // Middleware for static files
 app.use('/assets', express.static(__dirname + '/public'));
@@ -24,10 +25,18 @@ app.use('/', function (req, res, next) {
     next();
 });
 
-// POST body parsing
+// POST body parsing - x-www-application
 app.post('/person', urlencodedParser, function (req, res) {
    
     res.send('Thank you!');
+    console.log(req.body.firstname);
+    console.log(req.body.lastname);
+
+});
+
+app.post('/personjson', jsonParser, function (req, res) {
+
+    res.send('Thank you for JSON data!');
     console.log(req.body.firstname);
     console.log(req.body.lastname);
 
