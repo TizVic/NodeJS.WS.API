@@ -21,7 +21,7 @@
     "ejs": "^3.0.1",
     "express": "^4.17.1",
     "jasmine-node": "^3.0.0",
-    "moment": "^2.24.0"
+    "moment": "^2.29.2"
   },
   "devDependencies": {
     "eslint": "^6.7.2",
